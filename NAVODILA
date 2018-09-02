@@ -1,0 +1,5 @@
+zalaufi xampp in pjt na localhost/phpmyadmin
+tm daj import database -> naložiš s tukaj ROGLAN_DATABASE.sql
+
+ko zalaufaš localhost... dj cev ta projekt v XAMPP/htdocs
+pol greš pa v browser in napišeš "localhost/Roglan"
