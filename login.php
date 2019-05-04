@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="5;URL=index.php" />
+<meta http-equiv="refresh" content="5;URL=index.php"/>
 
 
 <body style="background-color:#e6ffff;">
@@ -29,7 +29,7 @@ if ($mysqli->connect_errno) {
     echo "Error: Failed to make a MySQL connection, here is why: \n";
     echo "Errno: " . $mysqli->connect_errno . "\n";
     echo "Error: " . $mysqli->connect_error . "\n";
-    
+
     // You might want to show them something nice, but we will simply exit
     exit;
 }
@@ -59,37 +59,35 @@ if ($result->num_rows === 0) {
     exit;
 }
 
-$num=$result->num_rows;
+$num = $result->num_rows;
 
 echo "<b><center>Database Output</center></b><br><br>";
 
-while ($row = $result->fetch_assoc()) {  
-	$dbusername = $row['username'];
-	$dbpassword = $row['password'];
-   
- }
+while ($row = $result->fetch_assoc()) {
+    $dbusername = $row['username'];
+    $dbpassword = $row['password'];
+
+}
 // check to  see if they match
 
 //HASH PASSWORD
-for ($i = 0; $i < 10000; $i++){
-    $password=hash('sha256',$password);
+for ($i = 0; $i < 10000; $i++) {
+    $password = hash('sha256', $password);
 }
 
- if  ($username=$dbusername&& $password==$dbpassword){
+if ($username = $dbusername && $password == $dbpassword) {
 
- 	 	echo "youre in! Redirecting to main page in 5 sec...<br> redirect now: <a href='index.php'>Click </a> here to return to <b>main</b/> page<br> <a href='member.php'>Click </a> here to enter <b>member</b> page";
- 	$_SESSION['username']=$dbusername;
- 	$_SESSION['loggedin']=true;
+    echo "youre in! Redirecting to main page in 5 sec...<br> redirect now: <a href='index.php'>Click </a> here to return to <b>main</b/> page<br> <a href='member.php'>Click </a> here to enter <b>member</b> page";
+    $_SESSION['username'] = $dbusername;
+    $_SESSION['loggedin'] = true;
 
- }else{
- 	echo "incorrect password";
- }
+} else {
+    echo "incorrect password";
+}
 
 //close everything
 $result->free();
 $mysqli->close();
-
-
 
 
 //echo sha1($password);

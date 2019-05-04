@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="3;URL=index.php" />
+<meta http-equiv="refresh" content="3;URL=index.php"/>
 
 <body style="background-color:#e6ffff;">
 
@@ -6,7 +6,7 @@
 session_start();
 
 
-$_SESSION['loggedin']=false;
+$_SESSION['loggedin'] = false;
 
 
 session_destroy();
